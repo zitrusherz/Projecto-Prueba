@@ -1,68 +1,65 @@
-import java.util.Random;
-import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.time.LocalDate;
+import java.util.Random;
 public class Pedido {
     private int monto_desc = 0;
     private int total = 0;
-    private ArrayList<String> used_id = new ArrayList<>();
-    private ArrayList<String> pedido = new ArrayList<>();
+    private static HashSet<String> usedId = new HashSet<>();
+    private HashMap<String, String[]> pedido = new HashMap<>();
     private String id;
     private LocalDate currentTime = LocalDate.now();
     private Random random = new Random();
-    private char rand_char1 = (char) (random.nextInt(26) + 'A');
+    private char rand_char = (char) (random.nextInt(26) + 'A');
     private int rand_num = random.nextInt(1000);
     private String cliente;
     private String descripcionProductos;
 
-    public Pedido(int[] precioProductos, Cliente cliente, String descripcionProductos){
+    public Pedido(HashMap productos ,Cliente cliente){
         this.id = setIdGenerator();
-        this.total = setTotal(precioProductos);
+        this.total = setTotal(productos);
         this.currentTime = LocalDate.now();
         this.cliente = cliente.toString();
         this.descripcionProductos = descripcionProductos;
 
-        pedido.add(this.id);
-        pedido.add(String.valueOf(this.total));
-        pedido.add(this.currentTime.toString());
-        pedido.add(this.cliente);
-        pedido.add(this.descripcionProductos);
     }
 
-    public ArrayList<String> getPedido(){
+    public HashMap getPedido(){
 
         return pedido;
     }
     private String setIdGenerator(){
 
-        String new_id = rand_char1 + String.valueOf(rand_num);
-        if (used_id.isEmpty() || !used_id.contains(new_id)){
-            used_id.add(new_id);
+        String new_id = rand_char + String.valueOf(rand_num);
+        if (usedId.isEmpty()){
+            usedId.add(new_id);
             return new_id;
-        } else if(used_id.contains(new_id)){
+        } else if(usedId.contains(new_id)){
             setIdGenerator();
         }
-        used_id.add(new_id);
+        usedId.add(new_id);
         return new_id;
     }
 
-    public int setTotal(int[] productos){
-        int suma_total = 0;
-
-        for(int producto: productos){
-            suma_total += producto;
+    public int setTotal(HashMap productos){
+        int totalSum = 0;
+        Collection<int[]> precios = productos.values();
+        for(int[] precio: precios){
+            totalSum += precio[0] * precio[1];
         }
-        if(suma_total >= 30000 && suma_total <= 80000){
-            suma_total *= 0.95;
+        if(totalSum >= 30000 && totalSum <= 80000){
+            totalSum *= 0.95;
             this.monto_desc = 5;
-        }else if(suma_total > 80000 && suma_total <= 150000){
-            suma_total *= 0.9;
+        }else if(totalSum > 80000 && totalSum <= 150000){
+            totalSum *= 0.9;
             this.monto_desc = 10;
-        }else if(suma_total > 150000){
-            suma_total *= 0.8;
+        }else if(totalSum > 150000){
+            totalSum *= 0.8;
             this.monto_desc = 20;
         }
 
-        this.total = suma_total;
+        this.total = totalSum;
         return this.total;
     }
 
