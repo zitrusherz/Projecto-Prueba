@@ -6,7 +6,7 @@ public class Catalogo extends Producto{
     public Catalogo(Producto producto){
         super(producto.getId(), producto.getNombre(), producto.getCategoria(), producto.getPrecio(), producto.getCantidad());
         catalogo.add(producto);
-        this.catalogo = catalogo;
+
     }
     public Catalogo(){
         super("0", "0", Categorias.NULL, 0, 0);
@@ -57,4 +57,11 @@ public class Catalogo extends Producto{
         catalogo.get(numProducto).setCantidad(getCantidadProducto(numProducto, catalogo) - cantidadComprada);
     }
 
+    public static String getNombreProducto(int numProducto){
+        return catalogo.get(numProducto).getNombre();
+    }
+    public static int getPrecioProducto(int numProducto){
+        return catalogo.get(numProducto).getPrecio();
+    }
 }
+
