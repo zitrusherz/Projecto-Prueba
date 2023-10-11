@@ -5,11 +5,11 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class Control {
 
-    private final Scanner sc = new Scanner(System.in);
 
     //Metodos de control de datos ingresados por el usuario
     //Metodo de control de datos general
-    public int controlInt(String tipo_de_dato) {//Control de datos de tipo int
+    public static int controlInt(String tipo_de_dato) {//Control de datos de tipo int
+        Scanner sc = new Scanner(System.in);
         int dato = -1;
 
         try {
@@ -21,20 +21,23 @@ public class Control {
             System.out.println("Ingrese un numero entero: ");
             controlInt(tipo_de_dato);
         }
+        sc.close();
         return dato;
     }
-    public String controlNoNull(String data, String typeOfData){//Control para no permitir datos nulos
-
+    public static String controlNoNull(String data, String typeOfData){//Control para no permitir datos nulos
+        Scanner sc = new Scanner(System.in);
         if(data == null || data.equals(" ")) {
             System.out.printf("Dato ingresado necesario, el %s no puede estar vacio.\nPor favor ingrese tu %s: ", typeOfData, typeOfData);
             data = sc.next();
             controlNoNull(data, typeOfData);
             System.out.println();
         }
+        sc.close();
         return data;
     }
 
-    public String controlLength(String data ,String messageError, int minLength, int maxLength){//Control de largo de datos
+    public static String controlLength(String data ,String messageError, int minLength, int maxLength){//Control de largo de datos
+        Scanner sc = new Scanner(System.in);
 
         if(data.length() < minLength || data.length() > maxLength) {
             System.out.println(messageError + "\nPor favor ingrese nuevamente: ");
@@ -42,10 +45,13 @@ public class Control {
             controlLength(data, messageError, minLength, maxLength);
             System.out.println();
         }
+        sc.close();
         return data;
     }
 
-    public int controlStringToIntValue(String valueToInt){//Control para convertir un string a int
+    public static int controlStringToIntValue(String valueToInt){//Control para convertir un string a int
+        Scanner sc = new Scanner(System.in);
+
         int value = -1;
         try{
             value = Integer.parseInt(valueToInt);
@@ -54,10 +60,13 @@ public class Control {
             valueToInt = sc.next();
             value = controlStringToIntValue(valueToInt);
         }
+        sc.close();
         return value;
     }
 
-    public double controlStringToDoubleValue(String valueToDouble){//Control para convertir un string a double
+    public static double controlStringToDoubleValue(String valueToDouble){//Control para convertir un string a double
+        Scanner sc = new Scanner(System.in);
+
         double value = -1;
         try{
             value = Double.parseDouble(valueToDouble);
@@ -66,17 +75,21 @@ public class Control {
             valueToDouble = sc.next();
             value = controlStringToDoubleValue(valueToDouble);
         }
+        sc.close();
         return value;
     }
     //---------------------------------------------------------------------------------------------------------------
     //Metodo de control de producto
-    public String controlId(){//Control de ID de producto
+    public static String controlId(){//Control de ID de producto
+        Scanner sc = new Scanner(System.in);
+
         String idProduct = sc.next();
         idProduct = controlNoNull(idProduct, "ID/codigo del producto");
         idProduct = controlLength(idProduct, "ID/codigo del producto tiene un largo fuera del rango", 6, 8);
+        sc.close();
         return idProduct;
     }
-    public int controlPrice(){//Control de precio de producto
+    public static int controlPrice(){//Control de precio de producto
         int precio = controlInt("el precio");
         if(precio <= 0){
             System.out.println("El precio no puede ser menor o igual a 0.\nPor favor ingreselo nuevamente: ");
@@ -85,7 +98,7 @@ public class Control {
         return precio;
     }
     //Metodo de control de categoria
-    public Enum controlCategoria(){
+    public static Enum controlCategoria(){
 
         Catalogo.categoryList();
         System.out.println("Por favor ingrese el numero correspondiente a la categoria del producto: ");
@@ -95,7 +108,7 @@ public class Control {
         return categoria;
     }
     //Metodo de control de cantidad de productos
-    public int controlStockOfProductsInput(){
+    public static int controlStockOfProductsInput(){
         int cantidadProducto = controlInt("la cantidad de productos");
         if (cantidadProducto <= 0){
             System.out.println("La cantidad de productos no puede ser menor o igual a 0.\nPor favor ingresela nuevamente: ");
@@ -104,14 +117,19 @@ public class Control {
         return cantidadProducto;
     }
     //Metodo de control de cliente
-    public String controlCustomerPhone(){
+    public static String controlCustomerPhone(){
+        Scanner sc = new Scanner(System.in);
+
         String customerNumber = sc.next();
         customerNumber = controlLength(customerNumber, "El numero no puede tener mas de 8 digitos", 8, 8);
         customerNumber = controlNoNull(customerNumber, "numero de telefono");
+        sc.close();
         return customerNumber;
     }
 
-    public String controlCustomerEmail(){
+    public static String controlCustomerEmail(){
+        Scanner sc = new Scanner(System.in);
+
         String customerEmail = sc.next();
         customerEmail = controlNoNull(customerEmail,"correo");
         customerEmail = controlLength(customerEmail, "El correo no puede tener mas de 30 caracteres ni menos de 5", 5, 40);
@@ -119,30 +137,35 @@ public class Control {
             System.out.println("El correo ingresado no es valido, intentelo nuevamente: ");
             return controlCustomerEmail();
         }
+        sc.close();
         return customerEmail;
     }
 
-    public String controlRun(){
+    public static String controlRun(){
+        Scanner sc = new Scanner(System.in);
 
         String dato = sc.next();
         dato = controlNoNull(dato, "run");
         dato = controlLength(dato, "El run debe tener entre 7 y 8 caracteres", 7, 8);
+        sc.close();
         return dato;
     }
-    public String controlDv(String tipo_de_dato){
+    public static String controlDv(String tipo_de_dato){
+        Scanner sc = new Scanner(System.in);
 
         String dato = sc.next();
         dato = controlNoNull(dato, tipo_de_dato);
         dato = controlLength(dato, "El digito verificador debe tener 1 caracter", 1, 1);
+        sc.close();
         return dato;
     }
     //Metodo de control del menu
-    public int controlMenu(){
+    public static int controlMenu(){
         int eleccion = controlInt("la eleccion");
         eleccion = controlGeneralChoices(eleccion, 0, 2);
         return eleccion;
     }
-    public Catalogo controlNoNullListOfProducts(ArrayList<Producto> catalogoInput){
+    public static Catalogo controlNoNullListOfProducts(ArrayList<Producto> catalogoInput){
 
         int eleccion;
         ProductoInputHandler productoInputHandler = new ProductoInputHandler();
@@ -165,7 +188,7 @@ public class Control {
         return null;
     }
 
-    public int controlNumOfProducts(int NumOfProducts){
+    public static int controlNumOfProducts(int NumOfProducts){
         int inputUser = controlInt("el numero de producto");
         if (inputUser < 0 || inputUser > NumOfProducts){
             System.out.println("El numero del producto no es valido, por favor intentelo nuevamente: ");
@@ -175,7 +198,7 @@ public class Control {
 
     }
 
-    public int controlStockOfProducts(int quantityToPurchase, int numOfProducts, Catalogo catalogo){
+    public static int controlStockOfProducts(int quantityToPurchase, int numOfProducts, Catalogo catalogo){
         quantityToPurchase = controlInt("la cantidad de productos a comprar");
         if(quantityToPurchase > catalogo.getCantidadProducto(numOfProducts, catalogo.getCatalogo())){
             System.out.println("La cantidad de productos a comprar es mayor a la cantidad de productos en stock\nPor favor ingrese una cantidad valida: ");
@@ -186,12 +209,15 @@ public class Control {
 
     //Prueba control de eleccion general
 
-    public int controlGeneralChoices(int choice, int minLimit, int maxLimit){
+    public static int controlGeneralChoices(int choice, int minLimit, int maxLimit){
+        Scanner sc = new Scanner(System.in);
+
         if(choice < minLimit || choice > maxLimit){
             System.out.println("La eleccion no es valida, por favor intentelo nuevamente: ");
             choice = sc.nextInt();
             return controlGeneralChoices(choice, minLimit, maxLimit);
         }
+        sc.close();
         return choice;
     }
 
