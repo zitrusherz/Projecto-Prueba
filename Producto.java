@@ -16,12 +16,11 @@ public class Producto {
         this.cantidad = cantidad;
     }
 
-
     public String getId(){
         return this.id;
     }
 
-    public void setId(String id){
+    protected void setId(String id){
         this.id = id;
     }
 
@@ -29,21 +28,20 @@ public class Producto {
         return this.nombre;
     }
 
-    public void setNombre(String nombre){
+    protected void setNombre(String nombre){
         this.nombre = nombre;
     }
     public Categorias getCategoria(){
         return this.categoria;
     }
-
-    public void setCategoria(Categorias categoria){
+    protected void setCategoria(Categorias categoria){
         this.categoria = categoria;
     }
     public int getPrecio(){
         return this.precio;
     }
 
-    public void setPrecio(int precio){
+    protected void setPrecio(int precio){
         this.precio = precio;
     }
 
@@ -51,7 +49,7 @@ public class Producto {
         return this.cantidad;
     }
 
-    public void setCantidad(int cantidad){
+    protected void setCantidad(int cantidad){
         this.cantidad = cantidad;
     }
     public String toString() {

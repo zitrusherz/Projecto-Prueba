@@ -1,18 +1,14 @@
 import java.util.ArrayList;
 
-public class Catalogo extends Producto{
+public class Catalogo{
     private static ArrayList<Producto> catalogo = new ArrayList<>();
 
-    public Catalogo(Producto producto){
-        super(producto.getId(), producto.getNombre(), producto.getCategoria(), producto.getPrecio(), producto.getCantidad());
-        catalogo.add(producto);
-
-    }
     public Catalogo(){
-        super("0", "0", Categorias.NULL, 0, 0);
-        this.catalogo = null;
+        catalogo = getCatalogo();
     }
-
+    public static boolean isEmpty(){
+        return catalogo.isEmpty();
+    }
     public static void categoryList(){
         System.out.println("Las categorias disponibles son: ");
         for(Categorias categoria: Categorias.values()){
@@ -22,39 +18,42 @@ public class Catalogo extends Producto{
             System.out.println(categoria.ordinal() + 1 + ". " + categoria);
         }
     }
-    public int size(){
+    public static int size(){
         return catalogo.size();
     }
-    public void addProduct(Producto producto){
+    public static void addProduct(Producto producto){
         catalogo.add(producto);
     }
-    public Producto getProduct(int numProducto){
+    public static Producto getProduct(int numProducto){
         return catalogo.get(numProducto);
     }
+    public static String getCategoriaProducto(int numProducto){
 
+
+        return catalogo.get(numProducto).getCategoria().name();
+    }
     public static ArrayList getCatalogo(){
         return catalogo;
     }
 
     public static void getListaProductos(){
         System.out.println("El catalogo de productos es el siguiente: ");
-        int num_of_products = 0;
+        int count = 0;
         for(int o = 0; o < catalogo.size(); o++){
-            System.out.println("Producto N° " + o + 1);
-            num_of_products += 1;
+            count++;
+            System.out.println("Producto N° " +  count + ": ");
             System.out.println(catalogo.get(o));
             System.out.print(";");
             System.out.println("----------------------------------");
         }
     }
 
-    public int getCantidadProducto(int numProducto, ArrayList<Producto> catalogo){
-
+    public static int getCantidadProducto(int numProducto){
         return catalogo.get(numProducto).getCantidad();
     }
 
-    public void setCantidadProductoNueva(int numProducto, int cantidadComprada, ArrayList<Producto> catalogo){
-        catalogo.get(numProducto).setCantidad(getCantidadProducto(numProducto, catalogo) - cantidadComprada);
+    public static void setCantidadProductoNueva(int numProducto, int cantidadComprada){
+        catalogo.get(numProducto).setCantidad(getCantidadProducto(numProducto) - cantidadComprada);
     }
 
     public static String getNombreProducto(int numProducto){

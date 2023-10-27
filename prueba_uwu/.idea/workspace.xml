@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a1cbd645-03a4-4f9a-958f-c2b42d152eb0" name="Changes" comment="Update de proyecto" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="Projecto-Prueba/master" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Catalogo.java" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ClienteInputHandler.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Control.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Menu.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Order.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/OrderDataHandler.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Producto.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/ProductoInputHandler.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2VXVqekFWEwJzL9Uh4PXOGcLI8I" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/chris/OneDrive/Documentos/GitHub/Projecto-Prueba/construcción del proyecto",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "vcs.Git",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a1cbd645-03a4-4f9a-958f-c2b42d152eb0" name="Changes" comment="" />
+      <created>1694982605666</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1694982605666</updated>
+      <workItem from="1694982606676" duration="232000" />
+      <workItem from="1695081358085" duration="3110000" />
+      <workItem from="1695148832652" duration="4890000" />
+      <workItem from="1695237092921" duration="18235000" />
+      <workItem from="1695322017815" duration="6817000" />
+      <workItem from="1695390395311" duration="2140000" />
+      <workItem from="1695431773765" duration="1510000" />
+      <workItem from="1695522467817" duration="1012000" />
+      <workItem from="1695596338536" duration="1005000" />
+      <workItem from="1695668380066" duration="8608000" />
+      <workItem from="1695765788300" duration="4095000" />
+      <workItem from="1695836487032" duration="1461000" />
+      <workItem from="1695840286881" duration="11035000" />
+      <workItem from="1695923301739" duration="3247000" />
+      <workItem from="1696981208438" duration="25000" />
+      <workItem from="1696981241769" duration="10819000" />
+      <workItem from="1697495712265" duration="2806000" />
+      <workItem from="1697756564991" duration="2440000" />
+      <workItem from="1697848369503" duration="3625000" />
+      <workItem from="1697852410666" duration="595000" />
+      <workItem from="1698080582227" duration="9226000" />
+      <workItem from="1698106791652" duration="3154000" />
+      <workItem from="1698187089556" duration="3241000" />
+      <workItem from="1698360478303" duration="15572000" />
+    </task>
+    <task id="LOCAL-00001" summary="Update de proyecto">
+      <option name="closed" value="true" />
+      <created>1698187128383</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1698187128383</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Update de proyecto">
+      <option name="closed" value="true" />
+      <created>1698375538655</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1698375538655</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="User">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="*" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Update de proyecto" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update de proyecto" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Control.java</url>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
